@@ -16,10 +16,6 @@ public class CustomAuthenticationManager implements AuthenticationManager {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        if (!(authentication instanceof BearerTokenAuthenticationToken)) {
-            System.out.println("BAD CREDENTIALS");
-        }
-
         try {
             var jwt = jwtDecoder.decode(((BearerTokenAuthenticationToken) authentication).getToken());
             var jwtAuthenticationToken = new JwtAuthenticationToken(jwt);
