@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:h2:file:./database/conference-db}
+    username: ${DATABASE_URSERNAME:sa}
+    password: ${DATABASSE_PASSWORD:password}
+    driverClassName: org.h2.Driver
+  h2:
+    console.enabled: true
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+org:
+  paperplane:
+    conference:
+      jwt:
+        private-key: ${JWT_PRIVATE_KEY:-----BEGIN RSA PRIVATE KEY-----\n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\n-----END RSA PRIVATE KEY-----}
+        public-key: ${JWT_PUBLIC_KEY:-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAv5gApGoIjena6nD3Fzab\nk1aJte4m+iSPt+ju8r9mcon9VNuMRWU0P52AtX2ZvDbZE3t+cBwXWV/hUU77x9xC\nJV0FNK4fQe8ngP5lGsufxfaDdkuK6SGZvxyd13BAsgf0aTWyWWUBF2Xie6tV8p7k\nHwB+KqJyMmRhkb2RdIvc6XXQrRpfRxLo5KCNOJ8xj9c5hMO56ZFcnU7BwGAkYLlX\ngEjDyMachS2y07a2tdmpUuA+swwFCzJcqaLmcm/8kUfbxrxbAcG7JVPFxW5rlkZ5\nifr4QQy+gtUJxq+3PxHVY0geVZR2jskQqa9hZphilySZaxmsFP7kFza2uplAM6g4\nOVR87DlF6mkW6TBdOiQjTz7kkP8CKlRbpK3U8ZmUBw8qwdTcuuBPXpYTwvlG7bRc\n3/kkOMTYz7nssV/J8KH4fWH3zacxlPXXcq3F1nG+yLzLrGbgMdtK+wXabRxnjKh3\nAQrAnaHSFkhyEJH05ga9LVLqyrpTfUXCtMBUZvHtQo238dq++V5Jxx5VhRwq1ioN\nJadUZCnWtq/LqQuLME2lmEz1vRQCy7TS3jHnqLmYD1V2cz3yfkgPqczJWpwyeXJl\nBs1GRunFGR3/n41fYcKPwRqoTJndqDo4DAqNOUBbU0BKUsnUzqgHA6XqaCvJe8JJ\nT2/Rp3NGWfUV/r9CN73iFxkCAwEAAQ==\n-----END PUBLIC KEY-----}
+      init-data:
+        run-on-start: ${INITIALIZE_DATA_ON_START:false}
+        users:
+          -
+            username: ${INITIAL_ADMIN_USERNAME:admin}
+            password: ${INITIAL_ADMIN_PASSWORD:12345}
+            displayedName: Admin
+            roles:
+              - USER
+              - ADMIN
+
+          -
+            username: ${INITIAL_USER_USERNAME:user}
+            password: ${INITIAL_USER_PASSWORD:12345}
+            displayedName: User
+            roles:
+              - USER
